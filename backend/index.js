@@ -6,7 +6,9 @@ const { data } = require('./db');
 const port = process.env.PORT;
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'https://vercel-deploy-app-frontend.vercel.app/' // Replace '*' with your frontend's actual URL in a production environment
+}));
 
 app.get("/", async (req, res) => {
     let vol,competition;
