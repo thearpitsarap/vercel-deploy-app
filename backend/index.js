@@ -9,22 +9,23 @@ const app = express();
 app.use(cors());
 
 app.get("/data", async (req, res) => {
+    let vol,competition;
     const keyword = req.query.keyword;
-
-    if (!keyword) {
-        return res.status(400).json({ message: "Missing 'keyword' parameter" });
+    const response = await data.find({});
+    for (const item of response) {
+        if (item.keyword == keyword) {
+            vol = item.searchVolume;
+            competition = item.competition;
+            break;
+        }
     }
 
-    const response = await data.find({ keyword });
-
-    if (response.length > 0) {
-        const { searchVolume, competition } = response[0];
-        res.json({ searchVolume, competition });
+    if (vol !== undefined && competition !== undefined) {
+        res.send({ searchVolume: vol, competition });
     } else {
-        res.status(404).json({ message: "Keyword not found" });
+        res.status(404).json({"message":"Keyword not found"});
     }
-});
-
+})
 
 app.get("/", async (req, res) => {
     const response = await data.find({});
