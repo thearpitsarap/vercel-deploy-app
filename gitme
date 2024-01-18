@@ -1,4 +1,0 @@
-git fetch origin main
-git merge origin/main
-git commit -m "Merge remote-tracking branch 'origin/main' into main"
-git push origin main
