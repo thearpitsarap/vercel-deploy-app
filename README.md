@@ -1,1 +1,1 @@
-# vercel-deply-app
+# vercel-deploy-app
