@@ -6,7 +6,7 @@ const name = process.env.NAME;
 const pass = process.env.PASSWORD;
 const uri = `mongodb+srv://${name}:${pass}@arpitcluster.dbmdrpr.mongodb.net/data?retryWrites=true&w=majority&ssl=true&tlsAllowInvalidCertificates=true`;
 
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(uri);
 
 const dataSchema = new mongoose.Schema({
   keyword: String,
