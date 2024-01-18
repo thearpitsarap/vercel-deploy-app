@@ -6,7 +6,7 @@ const { data } = require('./db');
 const port = process.env.PORT;
 
 const app = express();
-app.use(cors({ origin: '*' }));
+app.use(cors());
 
 app.get("/", async (req, res) => {
     let vol,competition;
