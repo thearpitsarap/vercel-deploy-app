@@ -39,7 +39,7 @@ function App() {
 }
 
 async function addData({setCompetition,setVolume,keyword}){
-  const response = await axios.get(`http://localhost:3000/data?&keyword=${keyword}`);
+  const response = await axios.get(`https://vercel-deploy-app-pi.vercel.app/data?&keyword=${keyword}`);
     console.log(response.data);
     setVolume(response.data.searchVolume);
     setCompetition(response.data.competition);
