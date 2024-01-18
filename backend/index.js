@@ -9,22 +9,7 @@ const app = express();
 app.use(cors());
 
 app.get("/data", async (req, res) => {
-    let vol,competition;
-    const keyword = req.query.keyword;
-    const response = await data.find({});
-    for (const item of response) {
-        if (item.keyword == keyword) {
-            vol = item.searchVolume;
-            competition = item.competition;
-            break;
-        }
-    }
-
-    if (vol !== undefined && competition !== undefined) {
-        res.send({ searchVolume: vol, competition });
-    } else {
-        res.status(404).json({"message":"Keyword not found"});
-    }
+    res.send("At data endpoint")
 })
 
 app.get("/", async (req, res) => {
