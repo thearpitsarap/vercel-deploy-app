@@ -1,7 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const dotenv = require('dotenv');
+dotenv.config();
 const { data } = require('./db');
+
+const port = process.env.PORT;
 
 const app = express();
 app.use(cors());
@@ -30,4 +34,4 @@ app.get("/", async (req, res) => {
     res.send(response);
 })
 
-app.listen("3000");
+app.listen(port);
