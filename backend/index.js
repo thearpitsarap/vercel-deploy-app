@@ -6,11 +6,13 @@ const { data } = require('./db');
 const port = process.env.PORT;
 
 const app = express();
+
 app.use(
     cors({
       origin: "*",
       exposedHeaders: ["Authorization"],
       credentials: true,
+      optionSuccessStatus:200
     })
   );
 
