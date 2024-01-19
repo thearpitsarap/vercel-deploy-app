@@ -9,7 +9,7 @@ const app = express();
 
 app.use(
     cors({
-      origin: "https://vercel-deploy-app-frontend.vercel.app/",
+      origin: "https://vercel-deploy-app-frontend.vercel.app",
       exposedHeaders: ["Authorization"],
       credentials: true,
       optionSuccessStatus:200
