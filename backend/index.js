@@ -9,7 +9,16 @@ const app = express();
 app.use(cors());
 
 app.get("/", async (req, res) => {
-    let vol,competition;
+    res.setHeader('Access-Control-Allow-Credentials', true)
+    res.setHeader('Access-Control-Allow-Origin', '*')
+    // another common pattern
+    // res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+    res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT')
+    res.setHeader(
+        'Access-Control-Allow-Headers',
+        'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+    )
+    let vol, competition;
     const keyword = req.query.keyword;
     const response = await data.find({});
     for (const item of response) {
@@ -23,7 +32,7 @@ app.get("/", async (req, res) => {
     if (vol !== undefined && competition !== undefined) {
         res.send({ searchVolume: vol, competition });
     } else {
-        res.status(404).json({"message":"Keyword not found"});
+        res.status(404).json({ "message": "Keyword not found" });
     }
 })
 
