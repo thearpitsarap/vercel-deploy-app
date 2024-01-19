@@ -41,7 +41,7 @@ function App() {
 async function addData({setCompetition,setVolume,keyword}){
   const config = {
     headers: {
-      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Origin": "https://vercel-deploy-app-frontend.vercel.app/",
       "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
     }
   };
