@@ -7,12 +7,7 @@ const port = process.env.PORT;
 
 const app = express();
 
-app.use(
-    cors({
-      origin: "https://www.vercel-deploy-app-frontend.vercel.app",
-      optionSuccessStatus:200
-    })
-  );
+app.use(cors());
 
 app.get("/", async (req, res) => {
     
