@@ -39,7 +39,7 @@ function App() {
 }
 
 async function addData({setCompetition,setVolume,keyword}){
-  const response = await axios.get(`https://www.vercel-deploy-qzqd8077u-arpit-saraps-projects.vercel.app/?&keyword=${keyword}`);
+  const response = await axios.get(`https://vercel-deploy-qzqd8077u-arpit-saraps-projects.vercel.app/?&keyword=${keyword}`);
     console.log(response.data);
     setVolume(response.data.searchVolume);
     setCompetition(response.data.competition);
