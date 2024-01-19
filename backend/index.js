@@ -10,8 +10,6 @@ const app = express();
 app.use(
     cors({
       origin: "https://www.vercel-deploy-app-frontend.vercel.app",
-      exposedHeaders: ["Authorization"],
-      credentials: true,
       optionSuccessStatus:200
     })
   );
